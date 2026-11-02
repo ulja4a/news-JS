@@ -9,12 +9,12 @@ class Loader {
         this.options = options;
     }
 
-    getResp(
+    getResp<T>(
         { endpoint, options = {} }: RequestOptions,
-        callback: ResponseCallback = () => {
+        callback: ResponseCallback<T> = () => {
             console.error('No callback for GET response');
         }
-    ) {
+    ): void {
         this.load('GET', endpoint, callback, options);
     }
 
@@ -42,12 +42,12 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load(
+    load<T>(
         method: 'GET',
         endpoint: string,
-        callback: ResponseCallback,
+        callback: ResponseCallback<T>,
         options: Record<string, string> = {}
-    ) {
+    ): void {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())

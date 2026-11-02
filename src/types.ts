@@ -7,7 +7,7 @@ export interface RequestOptions {
     options?: Record<string, string>;
 }
 
-export type ResponseCallback = (data: unknown) => void;
+export type ResponseCallback<T = unknown> = (data: T) => void;
 
 export interface NewsArticle {
     title: string;
