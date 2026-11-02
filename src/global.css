@@ -14,22 +14,50 @@ header h1 {
 }
 
 footer {
-    height: 100px;
+    width: 100%;
+    min-height: 100px;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-footer .copyright {
-    font-size: 14px;
-    color: #333;
-    text-align: center;
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 15px;
 }
-footer .copyright a {
-    color: #444;
+
+.footer-content a {
+    color: #7bcfff;
+    text-decoration: none;
 }
-footer .copyright a:hover {
-    color: #555;
+
+.footer-content a:hover {
+    text-decoration: underline;
 }
-footer .copyright:before {
-    content: '©';
+
+.footer-content span {
+    color: #ffffff;
 }
+
+.rss-logo {
+    display: block;
+    width: 70px;
+    height: auto;
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        gap: 12px;
+        padding: 15px 10px;
+        font-size: 12px;
+    }
+
+    .rss-logo {
+        width: 55px;
+    }
+}
+
