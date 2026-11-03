@@ -1,20 +1,31 @@
+
+
+
 .sources {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 6px;
     width: 100%;
-    height: 120px;
-    overflow: auto;
-    align-items: center;
+    max-height: 160px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    box-sizing: border-box;
     font: 300 1em 'Fira Sans', sans-serif;
 }
 
+
 .source__item {
-    background: none;
-    border: 2px solid #30c5ff;
+    background: #252d38;
+    border: 1px solid #30c5ff;
+    border-radius: 6px;
     font: inherit;
-    line-height: 1;
-    margin: 0.5em;
-    padding: 1em 2em;
+    font-size: 12px;
+    line-height: 1.2;
+    margin: 0;
+    padding: 6px 10px;
     color: #70d6ff;
     transition: 0.25s;
     cursor: pointer;
